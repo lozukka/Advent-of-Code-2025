@@ -9,7 +9,6 @@ fetch("input.txt")
     return response.text(); // string
   })
   .then((text) => {
-    console.log(typeof text);
     const inputArray = text.split("\r\n"); // string to array
     countSum(inputArray);
   })
@@ -19,10 +18,12 @@ fetch("input.txt")
 
 function countSum(inputArray) {
   inputArray.forEach((element) => {
+    //check if the input number is more than 99
     let modifyedNum = parseInt(element.slice(1));
     if (modifyedNum > 99) {
       modifyedNum = modifyedNum % 100;
     }
+    //check wich way to turn the dial, and then add or substract the input
     if (element.charAt(0) === "R") {
       sum = sum + modifyedNum;
       if (sum > 99) {
