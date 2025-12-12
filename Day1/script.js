@@ -21,6 +21,9 @@ function countSum(inputArray) {
     //check if the input number is more than 99
     let modifyedNum = parseInt(element.slice(1));
     if (modifyedNum > 99) {
+      //part 2 of the puzzle:
+      ammountOfZeros = ammountOfZeros + Math.floor(modifyedNum / 100);
+      console.log("amount of zeros: " + ammountOfZeros);
       modifyedNum = modifyedNum % 100;
     }
     //check wich way to turn the dial, and then add or substract the input
@@ -28,15 +31,22 @@ function countSum(inputArray) {
       sum = sum + modifyedNum;
       if (sum > 99) {
         sum = sum % 100;
+        //part 2
+        //ammountOfZeros++;
+        console.log("amount of zeros: " + ammountOfZeros);
       }
     } else {
       sum = sum - modifyedNum;
       if (sum < 0) {
         sum = 100 - Math.abs(sum);
+        //part 2
+        //ammountOfZeros++;
+        console.log("amount of zeros: " + ammountOfZeros);
       }
     }
-    if (sum === 0) {
+    if (sum == 0) {
       ammountOfZeros++;
+      console.log("amount of zeros: " + ammountOfZeros);
     }
 
     console.log(sum);
