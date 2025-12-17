@@ -24,18 +24,16 @@ function checkIDs(inputArray) {
     const begin = parseInt(IdNumber[0]);
     const end = parseInt(IdNumber[1]);
     for (let i = begin; i <= end; i++) {
-      //console.log(i);
       //check length divided by 2
       if (String(i).length % 2 == 0) {
         //-> if, then check if first half is the same as other half
         checkPalindrome(i);
-        //console.log(i + " true");
       }
     }
     console.log("And the answer is: " + answer);
   });
 }
-//-> if, then check if first half is the same as other half
+//-> is the first half the same as the other half
 function checkPalindrome(num) {
   let halfWay = String(num).length / 2;
   let firstHalf = num.toString().slice(0, halfWay);
